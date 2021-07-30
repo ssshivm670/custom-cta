@@ -25,7 +25,61 @@ import save from './save';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( 'create-block/custom-cta', {
+registerBlockType('create-block/custom-cta', {
+	title: 'Call to Action',
+	description: 'Block to generate a custom Call to Action',
+	icon: 'format-image',
+	category: 'layout',
+
+	attributes: {
+		title: {
+			type: 'string',
+			source: 'html',
+			selector: 'h2'
+		},
+		titleColor: {
+			type: 'string',
+			default: 'black'
+		},
+		bodyColor: {
+			type: 'string',
+			default: 'black'
+		},
+		body: {
+			type: 'string',
+			source: 'html',
+			selector: 'p'
+		},
+		backgroundImage: {
+			type: 'string',
+			default: null
+		},
+		overlayColor: {
+			type: 'string',
+			default: 'black'
+		},
+		overlayOpacity: {
+			type: 'number',
+			default: 0.3
+		},
+		ctaLink: {
+			type: 'string',
+			default: '#',
+		},
+		target: {
+			type: 'boolean',
+			default: '_self'
+		},
+		alignment: {
+			type: 'string',
+			default: 'none'
+		},
+		buttonPosition: {
+			type: 'string',
+			default: 'flex-start'
+		}
+	},
+
 	/**
 	 * @see ./edit.js
 	 */
@@ -35,4 +89,4 @@ registerBlockType( 'create-block/custom-cta', {
 	 * @see ./save.js
 	 */
 	save,
-} );
+});

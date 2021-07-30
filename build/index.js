@@ -1,1 +1,738 @@
-(window.webpackJsonp_custom_cta=window.webpackJsonp_custom_cta||[]).push([[1],{4:function(t,e,o){}}]),function(t){function e(e){for(var n,u,i=e[0],p=e[1],a=e[2],l=0,f=[];l<i.length;l++)u=i[l],Object.prototype.hasOwnProperty.call(r,u)&&r[u]&&f.push(r[u][0]),r[u]=0;for(n in p)Object.prototype.hasOwnProperty.call(p,n)&&(t[n]=p[n]);for(s&&s(e);f.length;)f.shift()();return c.push.apply(c,a||[]),o()}function o(){for(var t,e=0;e<c.length;e++){for(var o=c[e],n=!0,i=1;i<o.length;i++){var p=o[i];0!==r[p]&&(n=!1)}n&&(c.splice(e--,1),t=u(u.s=o[0]))}return t}var n={},r={0:0},c=[];function u(e){if(n[e])return n[e].exports;var o=n[e]={i:e,l:!1,exports:{}};return t[e].call(o.exports,o,o.exports,u),o.l=!0,o.exports}u.m=t,u.c=n,u.d=function(t,e,o){u.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},u.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},u.t=function(t,e){if(1&e&&(t=u(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(u.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var n in t)u.d(o,n,function(e){return t[e]}.bind(null,n));return o},u.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return u.d(e,"a",e),e},u.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},u.p="";var i=window.webpackJsonp_custom_cta=window.webpackJsonp_custom_cta||[],p=i.push.bind(i);i.push=e,i=i.slice();for(var a=0;a<i.length;a++)e(i[a]);var s=p;c.push([5,1]),o()}([function(t,e){t.exports=window.wp.element},function(t,e){t.exports=window.wp.i18n},function(t,e){t.exports=window.wp.blockEditor},function(t,e){t.exports=window.wp.blocks},,function(t,e,o){"use strict";o.r(e);var n=o(3),r=(o(4),o(0)),c=o(1),u=o(2);Object(n.registerBlockType)("create-block/custom-cta",{edit:function(){return Object(r.createElement)("p",Object(u.useBlockProps)(),Object(c.__)("Custom Cta – hello from the editor!","custom-cta"))},save:function(){return Object(r.createElement)("p",u.useBlockProps.save(),Object(c.__)("Custom Cta – hello from the saved content!","custom-cta"))}})}]);
+(window["webpackJsonp_custom_cta"] = window["webpackJsonp_custom_cta"] || []).push([["style-index"],{
+
+/***/ "./src/style.scss":
+/*!************************!*\
+  !*** ./src/style.scss ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ })
+
+}]);
+
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/
+/******/ 		return result;
+/******/ 	}
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"index": 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp_custom_cta"] = window["webpackJsonp_custom_cta"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push(["./src/index.js","style-index"]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/edit.js":
+/*!*********************!*\
+  !*** ./src/edit.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
+
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    title,
+    titleColor,
+    body,
+    bodyColor,
+    buttonText,
+    buttonColor,
+    borderRadius,
+    backgroundImage,
+    overlayColor,
+    overlayOpacity,
+    ctaLink,
+    alignment,
+    target,
+    buttonPostion
+  } = attributes;
+
+  function onSelectBorderRadius(value) {
+    setAttributes({
+      borderRadius: value
+    });
+  }
+
+  function onChangeTitle(newTitle) {
+    setAttributes({
+      title: newTitle
+    });
+  }
+
+  function onChangeBody(newBody) {
+    setAttributes({
+      body: newBody
+    });
+  }
+
+  function onChangeButtonText(newButtonText) {
+    setAttributes({
+      buttonText: newButtonText
+    });
+  }
+
+  function onTitleColorChange(newColor) {
+    setAttributes({
+      titleColor: newColor
+    });
+  }
+
+  function onBodyColorChange(newColor) {
+    setAttributes({
+      bodyColor: newColor
+    });
+  }
+
+  function onButtonColorChange(newColor) {
+    setAttributes({
+      buttonColor: newColor
+    });
+  }
+
+  function onSelectImage(newImage) {
+    setAttributes({
+      backgroundImage: newImage.sizes.full.url
+    });
+  }
+
+  function onOverlayColorChange(newColor) {
+    setAttributes({
+      overlayColor: newColor
+    });
+  }
+
+  function onOverlayOpacityChange(newOpacity) {
+    setAttributes({
+      overlayOpacity: newOpacity
+    });
+  }
+
+  function onCTALinkUpdate(newLink) {
+    setAttributes({
+      ctaLink: newLink
+    });
+  }
+
+  function onTargetChange(newValue) {
+    setAttributes({
+      target: newValue
+    });
+  }
+
+  function onChangeAlignment(newAlignment) {
+    setAttributes({
+      alignment: newAlignment === undefined ? 'none' : newAlignment
+    });
+  }
+
+  ;
+
+  function onChangeButtonAlignment(value) {
+    setAttributes({
+      buttonPostion: value
+    });
+  }
+
+  ;
+  return [Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InspectorControls"], {
+    style: {
+      marginBottom: '40px'
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
+    title: 'Font Color Settings'
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Select a Title color:")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["ColorPalette"], {
+    value: titleColor,
+    onChange: onTitleColorChange
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Select a Body color:")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["ColorPalette"], {
+    value: bodyColor,
+    onChange: onBodyColorChange
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Select a Button color:")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["ColorPalette"], {
+    value: buttonColor,
+    onChange: onButtonColorChange
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
+    title: 'CTA Button setting'
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Button Position"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["SelectControl"], {
+    label: "Button position",
+    value: buttonPostion,
+    options: [{
+      label: 'Start',
+      value: 'flex-start'
+    }, {
+      label: 'Center',
+      value: 'center'
+    }, {
+      label: 'Right',
+      value: 'flex-end'
+    }],
+    onChange: onChangeButtonAlignment
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
+    title: 'CTA link controls'
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Enter URL on button:")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+    label: "CTA link",
+    value: ctaLink,
+    onChange: onCTALinkUpdate
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Link target"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["ToggleControl"], {
+    label: 'Open link in new window',
+    checked: target,
+    onChange: onTargetChange
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
+    title: 'CTA styles'
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Select a Background Image:")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUpload"], {
+    onSelect: onSelectImage,
+    type: "image",
+    value: backgroundImage,
+    render: ({
+      open
+    }) => Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["IconButton"], {
+      className: "editor-media-placeholder__button is-button is-default is-large",
+      icon: "upload",
+      onClick: open
+    }, "Background Image")
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    style: {
+      marginTop: '20px',
+      marginBottom: '40px'
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("strong", null, "Overlay Color:")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["ColorPalette"], {
+    value: overlayColor,
+    onChange: onOverlayColorChange
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["RangeControl"], {
+    label: 'Overlay Opacity',
+    value: overlayOpacity,
+    onChange: onOverlayOpacityChange,
+    min: 0,
+    max: 1,
+    step: 0.01
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["ToggleControl"], {
+    label: 'Round Border',
+    checked: borderRadius,
+    onChange: onSelectBorderRadius
+  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["BlockControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["AlignmentToolbar"], {
+    value: alignment,
+    onChange: onChangeAlignment
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    class: "cta-container",
+    style: {
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      borderRadius: borderRadius ? '16px' : '0',
+      textAlign: alignment
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    key: "editable",
+    tagName: "h2",
+    placeholder: "Your CTA Title",
+    value: title,
+    onChange: onChangeTitle,
+    style: {
+      color: titleColor
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    key: "editable",
+    tagName: "p",
+    placeholder: "Your CTA Description",
+    value: body,
+    onChange: onChangeBody,
+    style: {
+      color: bodyColor
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    style: {
+      justifyContent: buttonPosition
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    key: "editable",
+    tagName: "span",
+    placeholder: "Your CTA button",
+    value: buttonText,
+    onChange: onChangeButtonText,
+    style: {
+      color: buttonColor
+    }
+  }))))))];
+}
+
+/***/ }),
+
+/***/ "./src/editor.scss":
+/*!*************************!*\
+  !*** ./src/editor.scss ***!
+  \*************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/**
+ * Registers a new block provided a unique name and an object defining its behavior.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * All files containing `style` keyword are bundled together. The code used
+ * gets applied both to the front of your site and to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+/**
+ * Every block starts by registering a new block type definition.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('create-block/custom-cta', {
+  title: 'Call to Action',
+  description: 'Block to generate a custom Call to Action',
+  icon: 'format-image',
+  category: 'layout',
+  attributes: {
+    title: {
+      type: 'string',
+      source: 'html',
+      selector: 'h2'
+    },
+    titleColor: {
+      type: 'string',
+      default: 'black'
+    },
+    bodyColor: {
+      type: 'string',
+      default: 'black'
+    },
+    body: {
+      type: 'string',
+      source: 'html',
+      selector: 'p'
+    },
+    backgroundImage: {
+      type: 'string',
+      default: null
+    },
+    overlayColor: {
+      type: 'string',
+      default: 'black'
+    },
+    overlayOpacity: {
+      type: 'number',
+      default: 0.3
+    },
+    ctaLink: {
+      type: 'string',
+      default: '#'
+    },
+    target: {
+      type: 'boolean',
+      default: '_self'
+    },
+    alignment: {
+      type: 'string',
+      default: 'none'
+    },
+    buttonPosition: {
+      type: 'string',
+      default: 'flex-start'
+    }
+  },
+
+  /**
+   * @see ./edit.js
+   */
+  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
+
+  /**
+   * @see ./save.js
+   */
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/save.js":
+/*!*********************!*\
+  !*** ./src/save.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
+
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function save({
+  attributes
+}) {
+  const {
+    title,
+    titleColor,
+    body,
+    bodyColor,
+    buttonText,
+    buttonColor,
+    borderRadius,
+    backgroundImage,
+    overlayColor,
+    overlayOpacity,
+    ctaLink,
+    target,
+    alignment,
+    buttonPosition
+  } = attributes;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    class: "cta-container",
+    style: {
+      backgroundImage: `url(${backgroundImage})`,
+      borderRadius: borderRadius ? '16px' : '0',
+      textAlign: alignment
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    tagName: "h2",
+    value: title,
+    style: {
+      color: titleColor
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    tagName: "p",
+    value: body,
+    style: {
+      color: bodyColor
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    style: {
+      justifyContent: buttonPosition
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+    href: ctaLink,
+    target: target ? '_blank' : '_self'
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    tagName: "p",
+    value: buttonText,
+    style: {
+      color: buttonColor
+    }
+  })))));
+}
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["blockEditor"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["blocks"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["components"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["element"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["i18n"]; }());
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=index.js.map

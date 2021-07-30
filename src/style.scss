@@ -10,3 +10,38 @@
 	color: #fff;
 	padding: 2px;
 }
+
+.alignLeft {
+	clear: both;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	float: none;
+}
+
+.alignCenter {
+	clear: both;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	float: none;
+}
+
+.alignRight {
+	clear: both;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	float: none;
+}
+
+.buttonContainer {
+	display: flex;
+}
+
+.cta-container {
+	background-size: "cover";
+	background-position: "center";
+	background-repeat: "no-repeat";
+	padding: 24px;
+}
