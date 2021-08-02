@@ -12,11 +12,10 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 import {
-	useBlockProps, RichText,
+	RichText,
 	InspectorControls,
 	ColorPalette,
 	MediaUpload,
-	InnerBlocks,
 	AlignmentToolbar,
 	BlockControls,
 
@@ -162,7 +161,7 @@ export default function Edit({ attributes, setAttributes }) {
 						label="Button position"
 						value={buttonPosition}
 						options={[
-							{ label: 'Start', value: 'flex-start' },
+							{ label: 'Left', value: 'flex-start' },
 							{ label: 'Center', value: 'center' },
 							{ label: 'Right', value: 'flex-end' },
 						]}
@@ -189,7 +188,7 @@ export default function Edit({ attributes, setAttributes }) {
 				textAlign: alignment,
 			}}>
 				<RichText key="editable"
-					tagName="h2"
+					tagName="h1"
 					placeholder="Your CTA Title"
 					value={title}
 					onChange={onChangeTitle}
@@ -205,14 +204,17 @@ export default function Edit({ attributes, setAttributes }) {
 					value={body}
 					onChange={onChangeBody}
 					style={{ color: bodyColor }} />
-				<div style={{ justifyContent: buttonPosition }}>
+				<div style={{
+					justifyContent: buttonPosition,
+					display: 'flex'
+				}}>
 					<button className='cta-button' style={{
 						background: '#2C61F3',
 						borderRadius: '47px'
 					}}>
 						<a>
 							<RichText key="editable"
-								tagName="span"
+								tagName="p"
 								placeholder="Your CTA button"
 								value={buttonText}
 								onChange={onChangeButtonText}

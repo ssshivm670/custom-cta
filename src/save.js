@@ -50,7 +50,7 @@ export default function save({ attributes }) {
 			padding: '24px 24px 28px',
 		}}>
 			<RichText.Content
-				tagName="h2"
+				tagName="h1"
 				value={title}
 				style={{
 					color: titleColor,
@@ -64,14 +64,17 @@ export default function save({ attributes }) {
 				value={body}
 				style={{ color: bodyColor }}
 			/>
-			<div style={{ justifyContent: buttonPosition }}>
+			<div style={{
+				justifyContent: buttonPosition,
+				display: 'flex'
+			}}>
 				<button className='cta-button' style={{
 					background: '#2C61F3',
 					borderRadius: '47px'
 				}}>
 					<a href={ctaLink} target={target ? '_blank' : '_self'}>
 						<RichText.Content
-							tagName="span"
+							tagName="p"
 							value={buttonText}
 							style={{
 								color: buttonColor,
