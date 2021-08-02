@@ -30,6 +30,7 @@ import { PanelBody, SelectControl, AlignmentControl, IconButton, RangeControl, T
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
+import './style.scss';
 import './editor.scss';
 
 /**
@@ -50,12 +51,10 @@ export default function Edit({ attributes, setAttributes }) {
 		buttonColor,
 		borderRadius,
 		backgroundImage,
-		overlayColor,
-		overlayOpacity,
 		ctaLink,
 		alignment,
 		target,
-		buttonPostion
+		buttonPosition
 	} = attributes;
 
 	function onSelectBorderRadius(value) {
@@ -90,14 +89,6 @@ export default function Edit({ attributes, setAttributes }) {
 		setAttributes({ backgroundImage: newImage.sizes.full.url });
 	}
 
-	function onOverlayColorChange(newColor) {
-		setAttributes({ overlayColor: newColor });
-	}
-
-	function onOverlayOpacityChange(newOpacity) {
-		setAttributes({ overlayOpacity: newOpacity });
-	}
-
 	function onCTALinkUpdate(newLink) {
 		setAttributes({ ctaLink: newLink })
 	}
@@ -114,34 +105,30 @@ export default function Edit({ attributes, setAttributes }) {
 
 	function onChangeButtonAlignment(value) {
 		setAttributes({
-			buttonPostion: value
+			buttonPosition: value
 		})
 	};
 
 	return ([
 		<InspectorControls style={{ marginBottom: '40px' }}>
-			<PanelBody title={'Font Color Settings'}>
-				<p><strong>Select a Title color:</strong></p>
-				<ColorPalette value={titleColor}
-					onChange={onTitleColorChange} />
-				<p><strong>Select a Body color:</strong></p>
-				<ColorPalette value={bodyColor}
-					onChange={onBodyColorChange} />
-				<p><strong>Select a Button color:</strong></p>
-				<ColorPalette value={buttonColor}
-					onChange={onButtonColorChange} />
-			</PanelBody>
-			<PanelBody title={'CTA Button setting'}>
-				<p>Button Position</p>
-				<SelectControl
-					label="Button position"
-					value={buttonPostion}
-					options={[
-						{ label: 'Start', value: 'flex-start' },
-						{ label: 'Center', value: 'center' },
-						{ label: 'Right', value: 'flex-end' },
-					]}
-					onChange={onChangeButtonAlignment}
+			<PanelBody title={'CTA styles'}>
+				<p><strong>Select a Background Image:</strong></p>
+				<MediaUpload
+					onSelect={onSelectImage}
+					type="image"
+					value={backgroundImage}
+					render={({ open }) => (
+						<IconButton
+							className="editor-media-placeholder__button is-button is-default is-large"
+							icon="upload"
+							onClick={open}>
+							Background Image
+						</IconButton>
+					)} />
+				<ToggleControl
+					label={'Round Border'}
+					checked={borderRadius}
+					onChange={onSelectBorderRadius}
 				/>
 			</PanelBody>
 			<PanelBody title={'CTA link controls'}>
@@ -158,37 +145,31 @@ export default function Edit({ attributes, setAttributes }) {
 					onChange={onTargetChange}
 				/>
 			</PanelBody>
-			<PanelBody title={'CTA styles'}>
-				<p><strong>Select a Background Image:</strong></p>
-				<MediaUpload
-					onSelect={onSelectImage}
-					type="image"
-					value={backgroundImage}
-					render={({ open }) => (
-						<IconButton
-							className="editor-media-placeholder__button is-button is-default is-large"
-							icon="upload"
-							onClick={open}>
-							Background Image
-						</IconButton>
-					)} />
-				<div style={{ marginTop: '20px', marginBottom: '40px' }}>
-					<p><strong>Overlay Color:</strong></p>
-					<ColorPalette value={overlayColor}
-						onChange={onOverlayColorChange} />
+			<PanelBody title={'Font Color Settings'}>
+				<p><strong>Select Title color:</strong></p>
+				<ColorPalette value={titleColor}
+					onChange={onTitleColorChange} />
+				<p><strong>Select Body color:</strong></p>
+				<ColorPalette value={bodyColor}
+					onChange={onBodyColorChange} />
+				<p><strong>Select Button Text color:</strong></p>
+				<ColorPalette value={buttonColor}
+					onChange={onButtonColorChange} />
+			</PanelBody>
+			<PanelBody title={'CTA Button setting'}>
+				<div>
+					<SelectControl
+						label="Button position"
+						value={buttonPosition}
+						options={[
+							{ label: 'Start', value: 'flex-start' },
+							{ label: 'Center', value: 'center' },
+							{ label: 'Right', value: 'flex-end' },
+						]}
+						className='wp-cta-controlPanel'
+						onChange={onChangeButtonAlignment}
+					/>
 				</div>
-				<RangeControl
-					label={'Overlay Opacity'}
-					value={overlayOpacity}
-					onChange={onOverlayOpacityChange}
-					min={0}
-					max={1}
-					step={0.01} />
-				<ToggleControl
-					label={'Round Border'}
-					checked={borderRadius}
-					onChange={onSelectBorderRadius}
-				/>
 			</PanelBody>
 		</InspectorControls>,
 
@@ -212,7 +193,12 @@ export default function Edit({ attributes, setAttributes }) {
 					placeholder="Your CTA Title"
 					value={title}
 					onChange={onChangeTitle}
-					style={{ color: titleColor }} />
+					style={{
+						color: titleColor,
+						fontSize: '24px',
+						fontWeight: 600,
+						lineHeight: '28px',
+					}} />
 				<RichText key="editable"
 					tagName="p"
 					placeholder="Your CTA Description"
@@ -220,14 +206,21 @@ export default function Edit({ attributes, setAttributes }) {
 					onChange={onChangeBody}
 					style={{ color: bodyColor }} />
 				<div style={{ justifyContent: buttonPosition }}>
-					<button>
+					<button className='cta-button' style={{
+						background: '#2C61F3',
+						borderRadius: '47px'
+					}}>
 						<a>
 							<RichText key="editable"
 								tagName="span"
 								placeholder="Your CTA button"
 								value={buttonText}
 								onChange={onChangeButtonText}
-								style={{ color: buttonColor }} />
+								style={{
+									color: buttonColor,
+									margin: '9px 15px'
+								}}
+								className='cta-button-text' />
 						</a>
 					</button>
 				</div>

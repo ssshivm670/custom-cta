@@ -12,18 +12,9 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 
-import {
-	useBlockProps, RichText,
-	InspectorControls,
-	ColorPalette,
-	InnerBlocks,
-	MediaUpload
-} from '@wordpress/block-editor';
+import { RichText } from '@wordpress/block-editor';
 
-
-
-import { PanelBody, IconButton, RangeControl } from '@wordpress/components'
-
+import './style.scss'
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
@@ -43,23 +34,30 @@ export default function save({ attributes }) {
 		buttonColor,
 		borderRadius,
 		backgroundImage,
-		overlayColor,
-		overlayOpacity,
 		ctaLink,
 		target,
 		alignment,
 		buttonPosition
 	} = attributes
 	return (
-		<div class="cta-container" style={{
+		<div className='cta-container' style={{
 			backgroundImage: `url(${backgroundImage})`,
 			borderRadius: borderRadius ? '16px' : '0',
-			textAlign: alignment
+			textAlign: alignment,
+			backgroundSize: 'cover',
+			backgroundPosition: 'center',
+			backgroundRepeat: 'no-repeat',
+			padding: '24px 24px 28px',
 		}}>
 			<RichText.Content
 				tagName="h2"
 				value={title}
-				style={{ color: titleColor }}
+				style={{
+					color: titleColor,
+					fontSize: '24px',
+					fontWeight: 600,
+					lineHeight: '28px',
+				}}
 			/>
 			<RichText.Content
 				tagName="p"
@@ -67,17 +65,24 @@ export default function save({ attributes }) {
 				style={{ color: bodyColor }}
 			/>
 			<div style={{ justifyContent: buttonPosition }}>
-				<button>
+				<button className='cta-button' style={{
+					background: '#2C61F3',
+					borderRadius: '47px'
+				}}>
 					<a href={ctaLink} target={target ? '_blank' : '_self'}>
 						<RichText.Content
-							tagName="p"
+							tagName="span"
 							value={buttonText}
-							style={{ color: buttonColor }}
+							style={{
+								color: buttonColor,
+								margin: '9px 15px'
+							}}
+							className='cta-button-text'
 						/>
 					</a>
 				</button>
 
 			</div>
-		</div>
+		</div >
 	);
 }

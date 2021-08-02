@@ -54,14 +54,6 @@ registerBlockType('create-block/custom-cta', {
 			type: 'string',
 			default: null
 		},
-		overlayColor: {
-			type: 'string',
-			default: 'black'
-		},
-		overlayOpacity: {
-			type: 'number',
-			default: 0.3
-		},
 		ctaLink: {
 			type: 'string',
 			default: '#',
@@ -72,7 +64,7 @@ registerBlockType('create-block/custom-cta', {
 		},
 		alignment: {
 			type: 'string',
-			default: 'none'
+			default: 'unset'
 		},
 		buttonPosition: {
 			type: 'string',

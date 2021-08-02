@@ -4,12 +4,12 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-
+/* 
 .wp-block-create-block-custom-cta {
 	background-color: #21759b;
 	color: #fff;
 	padding: 2px;
-}
+} */
 
 .alignLeft {
 	clear: both;
@@ -40,8 +40,17 @@
 }
 
 .cta-container {
-	background-size: "cover";
-	background-position: "center";
-	background-repeat: "no-repeat";
-	padding: 24px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 24px 24px 28px;
+}
+
+.cta-button {
+	background: #2C61F3;
+	border-radius: 47px;
+}
+
+.cta-button-text {
+	padding: 9px 15px;
 }
