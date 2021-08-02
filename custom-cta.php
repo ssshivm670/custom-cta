@@ -4,7 +4,7 @@
  * Description:       Custom CTA blog for gutenberg editor.
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           1.1.7
+ * Version:           1.1.8
  * Author:            Shivam Sharma
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html

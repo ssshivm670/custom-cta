@@ -78,9 +78,13 @@ export default function save({ attributes }) {
 							value={buttonText}
 							style={{
 								color: buttonColor,
-								margin: '9px 15px'
+								margin: '9px 15px',
+								fontSize: '12px !important',
+								fontWeight: '600 !important',
+								lineHeight: '18px !important',
+								textAlign: 'center !important'
 							}}
-							className='cta-button-text'
+						className='cta-button-text'
 						/>
 					</a>
 				</button>
